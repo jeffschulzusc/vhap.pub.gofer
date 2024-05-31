@@ -15,7 +15,7 @@ modelBuilder.EntitySet<Feature>("Features");
 modelBuilder.EntitySet<Test>("Test");
 
 builder.Services.AddControllers().AddOData(opt => opt.Count().Filter().OrderBy().Expand().SetMaxTop(null)
-              .AddRouteComponents("odata", modelBuilder.GetEdmModel()));
+              .AddRouteComponents("odata", modelBuilder.GetEdmModel(), new DefaultODataBatchHandler()));
 
 builder.Services.AddCors(options =>
 {
