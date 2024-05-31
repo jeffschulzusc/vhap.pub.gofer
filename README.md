@@ -1,31 +1,13 @@
-This repo is for testing batch calls under .net core odata 8
+JEFFS TESTS w ODATA BATCHING
 
-Current problem is: when call ../odata/$batch i am getting a 405 error ... and response headers look like such
-```
-HTTP/1.1 405 Method Not Allowed
-Content-Length: 0
-Date: Mon, 20 May 2024 22:51:49 GMT
-Server: Kestrel
-Access-Control-Allow-Origin: *
-Allow: GET
-```
+useful links:
+https://github.com/OData/AspNetCoreOData
+https://learn.microsoft.com/en-us/odata/odatalib/json-batch
+https://docs.oasis-open.org/odata/odata-json-format/v4.01/odata-json-format-v4.01.html#_Toc499716905
+https://github.com/OData/AspNetCoreOData/tree/main/docs
 
-sample postman curl:
-```
-curl --location 'http://localhost:5021/odata/$batch' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json' \
---data '{
-  "requests": [
-    {
-      "id": "json-batch-test-get-features-1",
-      "method": "GET",
-      "url": "http://localhost:5021/odata/Features",
-      "headers": {
-        "content-type": "application/json; odata.metadata=minimal; odata.streaming=true",
-        "odata-version": "4.0"
-      }
-    }
-  ]
-}'
-```
+support case:
+https://github.com/OData/AspNetCoreOData/issues/1239
+
+bard: (js_490@usc.edu)
+https://gemini.google.com/app/7b5b4b566fafcda3
